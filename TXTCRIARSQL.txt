@@ -1,0 +1,43 @@
+Database:
+
+	
+CREATE DATABASE meusdados;
+
+
+Tabela login:
+
+	
+CREATE TABLE login(
+ 	
+id INT NOT NULL AUTO_INCREMENT,
+ 	
+user VARCHAR(15) NOT NULL,
+ 	
+password VARCHAR(15) NOT NULL,
+ 	
+PRIMARY KEY (ID)
+	
+);
+
+
+
+Tabela CRUD:
+	
+	
+CREATE TABLE crud(
+ 	
+id INT NOT NULL AUTO_INCREMENT,
+ 	
+user VARCHAR(15) NOT NULL,
+ 	
+tarefa VARCHAR(40) NOT NULL,
+	
+data DATE NOT NULL,
+	
+importancia int NOT NULL,
+	
+categoria VARCHAR(20), 
+ 	
+PRIMARY KEY (ID)
+	
+);
