@@ -115,6 +115,53 @@ public class DAO {
 		return name;
 	}
 
+	public List<Tabela> doFiltro(String usuario, Integer filtro) throws SQLException {
+
+		List<Tabela> pessoas = new ArrayList<Tabela>();
+		if (filtro == 1) {
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM crud WHERE user=? ORDER BY data");
+			stmt.setString(1, usuario);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Tabela pessoa = new Tabela();
+				pessoa.setId(rs.getInt("id"));
+				Calendar data = Calendar.getInstance();
+				data.setTime(rs.getDate("data"));
+				pessoa.setData(data);
+				pessoa.setTarefa(rs.getString("tarefa"));
+				pessoa.setImportancia(rs.getInt("importancia"));
+				pessoa.setCategoria(rs.getString("categoria"));
+				pessoas.add(pessoa);
+				
+			}
+			rs.close();
+			stmt.close();
+		} else{
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM crud WHERE user =? ORDER BY importancia");
+			stmt.setString(1, usuario);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Tabela pessoa = new Tabela();
+				pessoa.setId(rs.getInt("id"));
+				Calendar data = Calendar.getInstance();
+				data.setTime(rs.getDate("data"));
+				pessoa.setData(data);
+				pessoa.setTarefa(rs.getString("tarefa"));
+				pessoa.setImportancia(rs.getInt("importancia"));
+				pessoa.setCategoria(rs.getString("categoria"));
+				pessoas.add(pessoa);
+				
+			}
+			rs.close();
+			stmt.close();
+		}
+		
+		return pessoas;
+		
+		
+		
+	}
+
 	public void close() throws SQLException {
 		connection.close();
 	}

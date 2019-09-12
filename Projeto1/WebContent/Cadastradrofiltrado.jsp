@@ -14,7 +14,10 @@
 	<%
 		DAO dao = new DAO();
 		String usuario = (String) request.getAttribute("user");
-		List<Tabela> pessoas = dao.getLista(usuario);
+		String filtro = (String) request.getAttribute("filtro");
+		System.out.println(filtro);
+		System.out.println(usuario);
+		List<Tabela> pessoas = dao.doFiltro(usuario,Integer.valueOf(filtro));
 	%>
 	<br>
 	<table border='1'>

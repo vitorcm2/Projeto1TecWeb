@@ -30,7 +30,6 @@ public class Login extends HttpServlet {
 			Cadastro cadastro = new Cadastro();
 			cadastro.setUser(request.getParameter("user"));
 			cadastro.setPassword(request.getParameter("password"));
-			
 			request.setAttribute("user", request.getParameter("user"));
 
 			if (dao.verifica(cadastro)) {
