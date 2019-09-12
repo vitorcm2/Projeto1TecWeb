@@ -19,6 +19,16 @@ PRIMARY KEY (ID)
 	
 );
 
+describe login;
+
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| user     | varchar(15) | NO   |     | NULL    |                |
+| password | varchar(15) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
 
 
 Tabela CRUD:
@@ -41,3 +51,16 @@ categoria VARCHAR(20),
 PRIMARY KEY (ID)
 	
 );
+
+describe crud;
+
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| user        | varchar(15) | NO   |     | NULL    |                |
+| tarefa      | varchar(40) | NO   |     | NULL    |                |
+| data        | date        | YES  |     | NULL    |                |
+| importancia | int(11)     | YES  |     | NULL    |                |
+| categoria   | varchar(20) | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
