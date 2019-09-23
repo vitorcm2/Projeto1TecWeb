@@ -7,7 +7,7 @@ CREATE DATABASE meusdados;
 Tabela login:
 
 	
-CREATE TABLE login(
+CREATE TABLE Login(
  	
 id INT NOT NULL AUTO_INCREMENT,
  	
